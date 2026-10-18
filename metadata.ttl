@@ -1,0 +1,36 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ont: <https://w3id.org/FAIR-course-UT/2026-2027/group6/ont#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+:GeneralGroup
+  a sh:PropertyGroup ;
+  rdfs:label "General" ;
+  sh:order 0 .
+
+ont:ObservationShape
+  a sh:NodeShape ;
+  rdfs:label "Metadata" ;
+  dct:description "The SHACL schema and the corresponding metadata records were formally generated and exported as RDF using the FAIR Data Point Contour Extension." ;
+  sh:targetClass ont:Observation ;
+  sh:property [
+    sh:path ont:resultTime ;
+    sh:datatype xsd:date ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:message "Every observation must have exactly one date." ;
+    sh:order 0 ;
+    dash:editor dash:TextFieldEditor ;
+    sh:group :GeneralGroup
+  ] ;
+  sh:property [
+    sh:path ont:pm25Value ;
+    sh:datatype xsd:float ;
+    sh:minCount 1 ;
+    sh:message "PM2.5 values must be provided as float numbers." ;
+    sh:order 0 ;
+    dash:editor dash:TextFieldEditor ;
+    sh:group :GeneralGroup
+  ] .
