@@ -84,6 +84,7 @@ ont:CityShape
   sh:property [
     sh:path ont:containedInPlace ;
     sh:nodeKind sh:IRI ;
+    sh:class ont:Country ;
     sh:minCount 1 ;
     sh:message "Every city must be linked to a Country using a valid URI." ;
     sh:order 7 ;
