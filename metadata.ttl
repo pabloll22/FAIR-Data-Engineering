@@ -4,6 +4,7 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix : <https://w3id.org/FAIR-course-UT/2026-2027/group6/shape#> .
 
 :GeneralGroup
   a sh:PropertyGroup ;
@@ -30,7 +31,62 @@ ont:ObservationShape
     sh:datatype xsd:float ;
     sh:minCount 1 ;
     sh:message "PM2.5 values must be provided as float numbers." ;
-    sh:order 0 ;
+    sh:order 1 ;
     dash:editor dash:TextFieldEditor ;
     sh:group :GeneralGroup
+  ] ;
+  sh:property [
+    sh:path ont:pm10Value ;
+    sh:datatype xsd:float ;
+    sh:message "PM10 values must be provided as float numbers." ;
+    sh:order 2 ;
+    dash:editor dash:TextFieldEditor ;
+    sh:group :GeneralGroup
+  ] ;
+  sh:property [
+    sh:path ont:temperatureValue ;
+    sh:datatype xsd:float ;
+    sh:message "Temperature values must be provided as float numbers." ;
+    sh:order 3 ;
+    dash:editor dash:TextFieldEditor ;
+    sh:group :GeneralGroup
+  ] ;
+  sh:property [
+    sh:path ont:humidityValue ;
+    sh:datatype xsd:float ;
+    sh:message "Humidity values must be provided as float numbers." ;
+    sh:order 4 ;
+    dash:editor dash:TextFieldEditor ;
+    sh:group :GeneralGroup
+  ] ;
+  sh:property [
+    sh:path ont:windSpeedValue ;
+    sh:datatype xsd:float ;
+    sh:message "Wind speed values must be provided as float numbers." ;
+    sh:order 5 ;
+    dash:editor dash:TextFieldEditor ;
+    sh:group :GeneralGroup
+  ] ;
+  sh:property [
+    sh:path ont:hasFeatureOfInterest ;
+    sh:nodeKind sh:IRI ;
+    sh:class ont:City ;
+    sh:minCount 1 ;
+    sh:message "Every observation must be linked to a City using a valid URI." ;
+    sh:order 6 ;
+    dash:editor dash:URIEditor ;
+    sh:group :GeneralGroup
+  ] .
+
+ont:CityShape
+  a sh:NodeShape ;
+  sh:targetClass ont:City ;
+  sh:property [
+    sh:path ont:containedInPlace ;
+    sh:nodeKind sh:IRI ;
+    sh:class ont:Country ;
+    sh:minCount 1 ;
+    sh:message "Every city must be linked to a Country using a valid URI." ;
+    sh:order 7 ;
+    dash:editor dash:URIEditor
   ] .
