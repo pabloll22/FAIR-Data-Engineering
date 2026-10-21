@@ -90,3 +90,16 @@ ont:CityShape
     sh:order 7 ;
     dash:editor dash:URIEditor
   ] .
+
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://w3id.org/FAIR-course-UT/2026/group06/data> a dcat:Dataset ;
+    dcterms:title "Global Air Quality Dataset" ;
+    dcterms:creator "Pablo (pabloll22) - Group 06" ;
+    dcterms:license <https://opensource.org/licenses/MIT> ;
+    dcat:distribution <https://w3id.org/FAIR-course-UT/2026/group06/distribution> .
+
+<https://w3id.org/FAIR-course-UT/2026/group06/distribution> a dcat:Distribution ;
+    dcterms:title "RDF/XML Distribution of Air Quality Data" ;
+    dcat:downloadURL <https://raw.githubusercontent.com/pabloll22/FAIR-Data-Engineering/main/global_air_quality_triplified.rdf> .
