@@ -28,41 +28,41 @@ ont:ObservationShape
   ] ;
   sh:property [
     sh:path ont:pm25Value ;
-    sh:datatype xsd:double ;
+    sh:datatype xsd:float ;
     sh:minCount 1 ;
-    sh:message "PM2.5 values must be provided as double numbers." ;
+    sh:message "PM2.5 values must be provided as float numbers." ;
     sh:order 1 ;
     dash:editor dash:TextFieldEditor ;
     sh:group :GeneralGroup
   ] ;
   sh:property [
     sh:path ont:pm10Value ;
-    sh:datatype xsd:double ;
-    sh:message "PM10 values must be provided as double numbers." ;
+    sh:datatype xsd:float ;
+    sh:message "PM10 values must be provided as float numbers." ;
     sh:order 2 ;
     dash:editor dash:TextFieldEditor ;
     sh:group :GeneralGroup
   ] ;
   sh:property [
     sh:path ont:temperatureValue ;
-    sh:datatype xsd:double ;
-    sh:message "Temperature values must be provided as double numbers." ;
+    sh:datatype xsd:float ;
+    sh:message "Temperature values must be provided as float numbers." ;
     sh:order 3 ;
     dash:editor dash:TextFieldEditor ;
     sh:group :GeneralGroup
   ] ;
   sh:property [
     sh:path ont:humidityValue ;
-    sh:datatype xsd:double ;
-    sh:message "Humidity values must be provided as double numbers." ;
+    sh:datatype xsd:float ;
+    sh:message "Humidity values must be provided as float numbers." ;
     sh:order 4 ;
     dash:editor dash:TextFieldEditor ;
     sh:group :GeneralGroup
   ] ;
   sh:property [
     sh:path ont:windSpeedValue ;
-    sh:datatype xsd:double ;
-    sh:message "Wind speed values must be provided as double numbers." ;
+    sh:datatype xsd:float ;
+    sh:message "Wind speed values must be provided as float numbers." ;
     sh:order 5 ;
     dash:editor dash:TextFieldEditor ;
     sh:group :GeneralGroup
